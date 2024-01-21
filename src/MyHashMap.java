@@ -20,6 +20,14 @@ public class MyHashMap<K, V> {
         size = 0;
     }
 
+    public void print(){
+        for (LinkedList<Node<K, V>> bucket : buckets) {
+            for (Node<K, V> node : bucket) {
+                System.out.print(node.toString());
+            }
+        }
+    }
+
     public void put(K key, V value) {
         int bucketIndex = getBucketIndex(key);
         LinkedList<Node<K, V>> bucket = buckets.get(bucketIndex);
@@ -147,5 +155,7 @@ public class MyHashMap<K, V> {
         public void setValue(V value) {
             this.value = value;
         }
+
+        public final String toString() { return key + "=" + value; }
     }
 }
