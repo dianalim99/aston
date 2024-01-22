@@ -1,3 +1,7 @@
+package my_hashmap;
+
+import my_hashmap.MyHashMap;
+import my_hashmap.MySecondHashMap;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
