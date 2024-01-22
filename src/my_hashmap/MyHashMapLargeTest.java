@@ -1,4 +1,6 @@
-import org.junit.Before;
+package my_hashmap;
+
+import my_hashmap.MyHashMap;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

@@ -1,3 +1,6 @@
+package my_hashmap;
+
+import my_hashmap.MyHashMap;
 import org.junit.Before;
 import org.junit.Test;
 
