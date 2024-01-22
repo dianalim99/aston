@@ -1,82 +1,101 @@
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashMap;
 
+import static org.junit.Assert.*;
+
 public class MyHashMapTest {
-    private MyHashMap<Integer, String> m1 =new MyHashMap<>();
-    private HashMap<Integer, String> m2 =new HashMap<>();
+    private MyHashMap<Integer, String> mapA;
+    private HashMap<Integer, String> mapE;
 
     @Before
     public void setUp1() {
-        m1.put(24, "Diana");
-        m1.put(25, "Maks");
-        m1.put(23, "Dasha");
-        m1.put(21, "Lesha");
+        mapA =new MyHashMap<>();
+        mapA.put(24, "Diana");
+        mapA.put(25, "Maks");
+        mapA.put(23, "Dasha");
+        mapA.put(21, "Lesha");
     }
     @Before
     public void setUp2() {
-        m2.put(24, "Diana");
-        m2.put(25, "Maks");
-        m2.put(23, "Dasha");
-        m2.put(21, "Lesha");
+        mapE =new HashMap<>();
+        mapE.put(24, "Diana");
+        mapE.put(25, "Maks");
+        mapE.put(23, "Dasha");
+        mapE.put(21, "Lesha");
     }
     @Test
     public void get1() {
-        String e = m2.get(24);
-        String a = m1.get(24);
-        Assert.assertEquals(e, a);
+        String e = mapE.get(24);
+        String a = mapA.get(24);
+        assertEquals(e, a);
     }
 
     @Test
     public void get2() {
-        String a = m1.get(27);
-        Assert.assertNull(a);
+        String a = mapA.get(27);
+        assertNull(a);
     }
 
     @Test
+    public void remove() {
+        mapA.remove(21);
+        assertEquals(3, mapA.getSize());
+        assertFalse(mapA.containsKey(21));
+        assertNull(mapA.get(21));
+        mapA.remove(26);
+        assertEquals(3, mapA.getSize());
+    }
+    @Test
     public void removeCompareSize() {
-        m2.remove(25);
-        m1.remove(25);
-        int e = m1.getSize();
-        int a = m2.size();
-        Assert.assertEquals(e, a);
+        mapE.remove(25);
+        mapA.remove(25);
+        int e = mapA.getSize();
+        int a = mapE.size();
+        assertEquals(e, a);
     }
 
     @Test
     public void removeCompareValue() {
-        m2.remove(25);
-        m1.remove(25);
-        String e = m1.get(25);
-        String a = m2.get(25);
-        Assert.assertEquals(e, a);
+        mapE.remove(25);
+        mapA.remove(25);
+        String e = mapA.get(25);
+        String a = mapE.get(25);
+        assertEquals(e, a);
     }
 
     @Test
     public void containsKey() {
-        boolean e = m2.containsKey(25);
-        boolean a = m1.containsKey(25);
-        Assert.assertEquals(e, a);
+        boolean e = mapE.containsKey(25);
+        boolean a = mapA.containsKey(25);
+        assertEquals(e, a);
+    }
+    @Test
+    public void containsAnyKey() {
+        assertTrue(mapA.containsKey(23));
+        assertTrue(mapA.containsKey(24));
+        assertTrue(mapA.containsKey(25));
+        assertFalse(mapA.containsKey(26));
     }
 
     @Test
     public void containsValue() {
-        boolean e = m2.containsValue("Diana");
-        boolean a = m1.containsValue("Diana");
-        Assert.assertEquals(e, a);
+        boolean e = mapE.containsValue("Diana");
+        boolean a = mapA.containsValue("Diana");
+        assertEquals(e, a);
     }
 
     @Test
     public void isEmpty() {
-        boolean a = m2.isEmpty();
-        Assert.assertNotNull(a);
+        boolean a = mapE.isEmpty();
+        assertNotNull(a);
     }
 
     @Test
     public void getSize() {
-        int e = m1.getSize();
-        int a = m2.size();
-        Assert.assertEquals(e, a);
+        int e = mapA.getSize();
+        int a = mapE.size();
+        assertEquals(e, a);
     }
 }
