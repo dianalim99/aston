@@ -1,5 +1,3 @@
-import my_hashmap.MyHashMap;
-
 import java.util.HashMap;
 
 public class Main {
