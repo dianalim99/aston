@@ -1,7 +1,7 @@
-package my_hashmap;
+package test.my_second_hashmap;
 
-import my_hashmap.MyHashMap;
-import my_hashmap.MySecondHashMap;
+import main.my_hashmap.MyHashMap;
+import main.my_second_hashmap.MySecondHashMap;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

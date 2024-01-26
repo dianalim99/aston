@@ -1,4 +1,4 @@
-package my_hashmap;
+package main.my_second_hashmap;
 
 /**
  * Реализация простго HashMap
@@ -24,14 +24,14 @@ public class MySecondHashMap<K, V> {
 
     private int size;
     /**
-     * Создает новый объект my_hashmap.MySecondHashMap с размером по умолчанию.
+     * Создает новый объект main.my_second_hashmap.MySecondHashMap с размером по умолчанию.
      */
 
     public MySecondHashMap() {
         this(DEFAULT_CAPACITY);
     }
     /**
-     * Создает новый объект my_hashmap.MySecondHashMap с заданным начальным размером.
+     * Создает новый объект main.my_second_hashmap.MySecondHashMap с заданным начальным размером.
      * @param capacity начальный размер хэш-карты
      */
     public MySecondHashMap(int capacity) {

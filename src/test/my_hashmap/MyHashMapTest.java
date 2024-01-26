@@ -1,6 +1,6 @@
-package my_hashmap;
+package test.my_hashmap;
 
-import my_hashmap.MyHashMap;
+import main.my_hashmap.MyHashMap;
 import org.junit.Before;
 import org.junit.Test;
 
